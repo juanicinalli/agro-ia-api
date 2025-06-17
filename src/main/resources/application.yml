@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/agroia_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Configuración de JWT
+jwt:
+  secret: ${JWT_SECRET:your-secret-key-here}
+  expiration: 86400000  # 24 horas en milisegundos
+
+# Roles por defecto
+roles:
+  default: USER
+  admin: ADMIN
+
+# Configuración de Gemini (la clave debe estar en variable de entorno o config)
+gemini:
+  api-key: ${GEMINI_API_KEY:}
+  url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent

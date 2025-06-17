@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.12.xsd">
+
+    <!-- Incluye el changelog inicial con la estructura de la base de datos -->
+    <include file="db/changelog/001-initial-schema.xml" relativeToChangelogFile="true"/>
+    
+    <!-- Incluye el changelog de datos iniciales -->
+    <include file="db/changelog/002-seed-data.xml" relativeToChangelogFile="true"/>
+    
+    <!-- Incluye el changelog para la integración con Gemini (opcional) -->
+    <include file="db/changelog/003-gemini-integration.xml" relativeToChangelogFile="true"/>
+    
+    <!-- Incluye el changelog para auditoría y logs -->
+    <include file="db/changelog/004-audit-logs.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
